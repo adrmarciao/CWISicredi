@@ -32,7 +32,7 @@ class EventsAdapter(private val context: Context) : Adapter<EventsAdapter.Holder
         val event = events[position]
         holder.title.text = String.format(
             Locale.getDefault(),
-            context.getText(R.string.home_activity_event_name).toString(),
+            context.getText(R.string.home_activity_event_name_label).toString(),
             event.title
         )
         holder.description.text = event.description
