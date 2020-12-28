@@ -14,12 +14,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="@dimen/detail_activity_padding">
 
             <TextView
                 android:id="@+id/detail_activity_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/detail_activity_title_size"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -27,8 +30,9 @@
             <ImageView
                 android:id="@+id/detail_activity_event_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:layout_height="@dimen/detail_activity_event_image_height"
+                android:padding="@dimen/detail_activity_event_image_padding"
+                app:srcCompat="@drawable/ic_unavaliable"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_activity_title" />
@@ -37,7 +41,7 @@
                 android:id="@+id/detail_activity_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:padding="@dimen/detail_activity_price_padding"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_activity_event_image" />
 
@@ -45,7 +49,7 @@
                 android:id="@+id/detail_activity_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:padding="@dimen/detail_activity_description_padding"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_activity_price" />
@@ -53,60 +57,73 @@
     </ScrollView>
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/detail_activity_fab"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/detail_activity_fab_width"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:backgroundTint="@color/primaryColor"
-        android:text="Opções"
+        android:layout_marginEnd="@dimen/detail_activity_fab_margin_end"
+        android:layout_marginBottom="@dimen/detail_activity_fab_margin_bottom"
+        app:backgroundTint="@color/primaryDarkColor"
+        android:text="@string/detail_activity_fab_text"
+        app:iconTint="@android:color/white"
+        android:textColor="@android:color/white"
         app:icon="@drawable/ic_plus_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/detail_activity_go_to"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/detail_activity_go_to_width"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        app:backgroundTint="@color/primaryColor"
-        app:fabSize="normal"
+        android:layout_marginBottom="@dimen/detail_activity_margin_bottom"
+        app:backgroundTint="@color/primaryDarkColor"
+        android:text="@string/detail_activity_go_to_text"
+        app:iconTint="@android:color/white"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="@+id/detail_activity_fab"
         app:layout_constraintBottom_toTopOf="@+id/detail_activity_fab"
         app:layout_constraintEnd_toEndOf="@+id/detail_activity_fab"
-        app:srcCompat="@drawable/ic_go_to_location" />
+        app:icon="@drawable/ic_go_to_location" />
 
-<!--   <TextView-->
-<!--        android:id="@+id/add_alarm_action_text"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:text="Navegar"-->
-<!--        android:textColor="@android:color/holo_blue_dark"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/detail_activity_go_to"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/detail_activity_go_to"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/detail_activity_go_to" />-->
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/detail_activity_share"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/detail_activity_fab_width"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        app:backgroundTint="@color/primaryColor"
-        app:fabSize="normal"
+        android:layout_marginBottom="@dimen/detail_activity_margin_bottom"
+        app:backgroundTint="@color/primaryDarkColor"
+        android:text="@string/detail_activity_go_to_share"
+        app:iconTint="@android:color/white"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/detail_activity_go_to"
         app:layout_constraintEnd_toEndOf="@+id/detail_activity_go_to"
         app:layout_constraintStart_toStartOf="@+id/detail_activity_go_to"
-        app:srcCompat="@drawable/ic_share" />
+        app:icon="@drawable/ic_share" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/add_person_action_text"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:textColor="@android:color/holo_blue_dark"-->
-<!--        android:text="Add Person"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/add_person_fab"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/add_person_fab"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/add_person_fab" />-->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/detail_activity_check_in"
+        android:layout_width="@dimen/detail_activity_fab_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/detail_activity_margin_bottom"
+        app:backgroundTint="@color/primaryDarkColor"
+        android:text="@string/detail_activity_go_to_check_in"
+        android:textColor="@android:color/white"
+        app:iconTint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/detail_activity_share"
+        app:layout_constraintEnd_toEndOf="@+id/detail_activity_share"
+        app:layout_constraintStart_toStartOf="@+id/detail_activity_share"
+        app:icon="@drawable/ic_check_in" />
+    <RelativeLayout
+        android:id="@+id/progress"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="@color/progress_bg_color"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/indeterminateBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/progress"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primaryColor">#b2ebf2</color>
-    <color name="primaryLightColor">#e5ffff</color>
-    <color name="primaryDarkColor">#81b9bf</color>
+    <color name="primaryColor">#ff6f00</color>
+    <color name="primaryLightColor">#ffa040</color>
+    <color name="primaryDarkColor">#c43e00</color>
     <color name="primaryTextColor">#000000</color>
+    <color name="home_adapter_item_card_background">#F1EBEA</color>
+    <color name="progress_bg_color">#33000000</color>
 
 </resources>

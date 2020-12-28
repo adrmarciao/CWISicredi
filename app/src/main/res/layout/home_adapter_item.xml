@@ -8,17 +8,17 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/home_adapter_item_card_height"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#F1EBEA"
+        android:layout_margin="@dimen/home_adapter_item_card_margin"
+        app:cardBackgroundColor="@color/home_adapter_item_card_background"
         app:layout_constraintTop_toTopOf="parent"
-        card_view:cardCornerRadius="4dp">
+        card_view:cardCornerRadius="@dimen/home_adapter_item_card_radius">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:padding="@dimen/home_adapter_item_padding_card_container"
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
+                    android:textStyle="bold"
                     android:ems="10"
                     android:maxLines="1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
-                    android:paddingTop="20dp"
+                    android:paddingTop="@dimen/home_adapter_item_description_padding_top"
                     android:ellipsize="end"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/home_adapter_event_title" />
@@ -51,11 +52,11 @@
 
             <ImageView
                 android:id="@+id/home_adapter_event_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/home_adapter_item_image_size"
+                android:layout_height="@dimen/home_adapter_item_image_size"
                 android:layout_gravity="center_vertical"
-                android:paddingRight="5dp"
-                android:paddingLeft="5dp"
+                android:paddingRight="@dimen/home_adapter_item_image_padding"
+                android:paddingLeft="@dimen/home_adapter_item_image_padding"
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

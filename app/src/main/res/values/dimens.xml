@@ -1,3 +1,25 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="home_adapter_item_card_height">120dp</dimen>
+    <dimen name="home_adapter_item_card_margin">10dp</dimen>
+    <dimen name="home_adapter_item_padding_card_container">10dp</dimen>
+    <dimen name="home_adapter_item_image_size">100dp</dimen>
+    <dimen name="home_adapter_item_image_padding">5dp</dimen>
+    <dimen name="home_adapter_item_description_padding_top">20dp</dimen>
+    <dimen name="home_adapter_item_card_radius">4dp</dimen>
+
+    <dimen name="detail_check_padding">20dp</dimen>
+    <dimen name="detail_check_width">200dp</dimen>
+    <dimen name="detail_activity_padding">10dp</dimen>
+    <dimen name="detail_activity_title_size">20dp</dimen>
+    <dimen name="detail_activity_event_image_height">300dp</dimen>
+    <dimen name="detail_activity_event_image_padding">20dp</dimen>
+    <dimen name="detail_activity_price_padding">20dp</dimen>
+    <dimen name="detail_activity_description_padding">20dp</dimen>
+    <dimen name="detail_activity_fab_width">160dp</dimen>
+    <dimen name="detail_activity_fab_margin_end">16dp</dimen>
+    <dimen name="detail_activity_fab_margin_bottom">16dp</dimen>
+    <dimen name="detail_activity_go_to_width">160dp</dimen>
+    <dimen name="detail_activity_margin_bottom">24dp</dimen>
 </resources>

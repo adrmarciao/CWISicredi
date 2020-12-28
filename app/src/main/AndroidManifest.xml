@@ -4,6 +4,7 @@
     package="br.com.cwisicredi">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".CoreApplication"
@@ -16,12 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".view.activity.MainActivity2"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.CwiSicredi.NoActionBar"></activity>
-        <activity
             android:name=".view.activity.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/Theme.CwiSicredi.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.HomeActivity" />
-        <activity android:name=".view.activity.DetailActivity" />
+        <activity
+            android:label="@string/home_activity_name"
+            android:name=".view.activity.HomeActivity" />
+        <activity
+            android:label="@string/detail_activity_name"
+            android:name=".view.activity.DetailActivity" />
     </application>
 
 </manifest>

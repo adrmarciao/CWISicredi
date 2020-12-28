@@ -9,10 +9,28 @@
     <string name="launcher_label">Eventos.Com</string>
 
     <!-- Home Activity -->
+    <string name="home_activity_name">Home</string>
     <string name="home_activity_event_name_label">Evento: %1$2s</string>
 
     <!-- Detail Activity -->
+    <string name="detail_activity_name">Detalhe</string>
     <string name="detail_activity_price_label">Preço para participar R$%1$2s</string>
     <string name="detail_activity_share_body">%1\$2s\n%2\$2s\nDia:%3\$2s\nPreco:R$%4\$2s</string>
     <string name="detail_activity_share_from">Share via CWISicredi</string>
+    <string name="detail_check_in_dialog_confirm">Check In</string>
+    <string name="detail_check_in_dialog_cancel">Fechar</string>
+
+    <!-- Common -->
+    <string name="google_navigation_intent_extra">google.navigation:q=%1$2s,%2$2s</string>
+    <string name="google_navigation_intent">com.google.android.apps.maps</string>
+    <string name="date_format_default">dd/MM/yyyy HH:mm</string>
+    <string name="detail_check_name_hint">Nome</string>
+    <string name="detail_check_email_hint">E-mail</string>
+    <string name="detail_activity_fab_text">Opções</string>
+    <string name="detail_activity_go_to_text">Navegar</string>
+    <string name="detail_activity_go_to_share">Share</string>
+    <string name="detail_activity_go_to_check_in">Check In</string>
+    <string name="detail_activity_check_in_ok">Check In realizado.</string>
+    <string name="detail_activity_check_in_fail">Falha ao fazer o Check In.</string>
+    <string name="detail_activity_required_field">Campo Obrigatório!</string>
 </resources>
