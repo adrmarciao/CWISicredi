@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CwiSicredi" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.CwiSicredi" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
@@ -14,7 +14,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.CwiSicredi.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CwiSicredi.AppBarOverlay" parent="Theme.MaterialComponents.Light.DarkActionBar" />
 
     <style name="Theme.CwiSicredi.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

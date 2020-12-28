@@ -13,4 +13,6 @@
 
     <!-- Detail Activity -->
     <string name="detail_activity_price_label">Preço para participar R$%1$2s</string>
+    <string name="detail_activity_share_body">%1\$2s\n%2\$2s\nDia:%3\$2s\nPreco:R$%4\$2s</string>
+    <string name="detail_activity_share_from">Share via CWISicredi</string>
 </resources>

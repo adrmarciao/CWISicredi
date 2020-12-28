@@ -2,17 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.cwisicredi">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".CoreApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".CoreApplication"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.CwiSicredi"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity
+            android:name=".view.activity.MainActivity2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.CwiSicredi.NoActionBar"></activity>
         <activity
             android:name=".view.activity.MainActivity"
             android:label="@string/app_name"
@@ -23,8 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.HomeActivity"/>
-        <activity android:name=".view.activity.DetailActivity"/>
+        <activity android:name=".view.activity.HomeActivity" />
+        <activity android:name=".view.activity.DetailActivity" />
     </application>
 
 </manifest>
