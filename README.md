@@ -11,20 +11,20 @@ Aplicativo foi desenvolvido para exibição de dados de eventos disponível pela
  Estrutura de pacotes:
  
  App
- - module, este pacote compreende informações para injeção de dependencia;
- - repository, este pacote compreende a camada de dominio da aplicação que tem por objetivo 
+ - **module**, este pacote compreende informações para injeção de dependencia;
+ - **repository**, este pacote compreende a camada de dominio da aplicação que tem por objetivo 
    encapsular regras e realizar solicitação de dados a camada de network(camada reponsável pela 
    requisição de dados da api);
- - view, este pacote encapsula fragmentos, activies e adapter;
- - viewmodel, este pacote conversa diretamente com a camada de repository e nele compreende a 
+ - **view**, este pacote encapsula fragmentos, activies e adapter;
+ - **viewmodel**, este pacote conversa diretamente com a camada de repository e nele compreende a 
    as regras para a renderização das telas;
      
  Network
- - dto, pacote que implementa o padrão "data transfer object" e tem como objetivo fazer a 
+ - **dto**, pacote que implementa o padrão "data transfer object" e tem como objetivo fazer a 
    transferência de dados entre o modulo de Network e App;
- - exception, pacote para o tratamento de erros de rede;
- - rest, encapsula as interfaces do retrofit para realizar as requisições;
- - service, pacote com classes responsável por realizar as requisições usando retrofit
+ - **exception**, pacote para o tratamento de erros de rede;
+ - **rest**, encapsula as interfaces do retrofit para realizar as requisições;
+ - **service**, pacote com classes responsável por realizar as requisições usando retrofit
      
  Obs: o sistema possui um cache implementado pelo protocolo HTTP denominado HTTP Caching.
 
