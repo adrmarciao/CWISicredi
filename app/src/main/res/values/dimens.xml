@@ -1,6 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="home_activity_error_msg_size">20dp</dimen>
+
     <dimen name="home_adapter_item_card_height">120dp</dimen>
     <dimen name="home_adapter_item_card_margin">10dp</dimen>
     <dimen name="home_adapter_item_padding_card_container">10dp</dimen>
@@ -22,4 +24,5 @@
     <dimen name="detail_activity_fab_margin_bottom">16dp</dimen>
     <dimen name="detail_activity_go_to_width">160dp</dimen>
     <dimen name="detail_activity_margin_bottom">24dp</dimen>
+
 </resources>

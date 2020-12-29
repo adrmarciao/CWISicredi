@@ -11,6 +11,7 @@
     <!-- Home Activity -->
     <string name="home_activity_name">Home</string>
     <string name="home_activity_event_name_label">Evento: %1$2s</string>
+    <string name="home_activity_error_msg">Conteudo indisponível</string>
 
     <!-- Detail Activity -->
     <string name="detail_activity_name">Detalhe</string>
@@ -33,4 +34,5 @@
     <string name="detail_activity_check_in_ok">Check In realizado.</string>
     <string name="detail_activity_check_in_fail">Falha ao fazer o Check In.</string>
     <string name="detail_activity_required_field">Campo Obrigatório!</string>
+
 </resources>

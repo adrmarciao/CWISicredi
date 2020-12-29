@@ -37,10 +37,17 @@ class HomeActivity : AppCompatActivity(), EventsAdapter.EventCallback {
         binding.homeActivityList.adapter = this.adapter
         this.adapter.eventCallback = this
         binding.progress.visibility = View.VISIBLE
-        homeViewModel.getEvents().observe(this, Observer { t ->
-            this.adapter.setData(t)
+        homeViewModel.eventLiveData.observe(this, Observer { t ->
+                this.adapter.setData(t)
+                binding.progress.visibility = View.GONE
+                binding.homeActivityError.visibility = View.GONE
+            })
+        homeViewModel.eventErrorMsgLiveData.observe(this, Observer {
+            this.adapter.setData(it)
             binding.progress.visibility = View.GONE
+            binding.homeActivityError.visibility = View.VISIBLE
         })
+        homeViewModel.getEvents()
     }
 
     override fun onDestroy() {

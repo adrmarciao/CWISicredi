@@ -10,16 +10,17 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(private val eventRepository: EventRepository): ViewModel() {
 
-    private val eventLiveData: MutableLiveData<List<EventDTO>> by lazy { MutableLiveData() }
+    val eventLiveData: MutableLiveData<List<EventDTO>> by lazy { MutableLiveData() }
+    val eventErrorMsgLiveData: MutableLiveData<List<EventDTO>> by lazy { MutableLiveData() }
 
-    fun getEvents(): MutableLiveData<List<EventDTO>> {
+    fun getEvents() {
         GlobalScope.launch {
             try {
-                eventLiveData.postValue(eventRepository.getEvents().await())
+                val eventList = eventRepository.getEvents().await()
+                eventLiveData.postValue(eventList)
             } catch (ex: NetworkDataException) {
-                eventLiveData.postValue(emptyList())
+                eventErrorMsgLiveData.postValue(emptyList())
             }
         }
-        return eventLiveData;
     }
 }

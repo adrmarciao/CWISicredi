@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.cwisicredi.R
@@ -96,31 +97,7 @@ class DetailActivity : AppCompatActivity() {
                     if (result) {
                         dialog.dismiss()
                         detailActivityBinding.progress.visibility = View.VISIBLE
-                        detailViewModel.checkIn(
-                            eventDTO.id,
-                            dialogBiding.detailCheckInDialogNameEdit.text.toString(),
-                            dialogBiding.detailCheckInDialogEmailEdit.text.toString()
-                        )
-                            .observe(
-                                this, androidx.lifecycle.Observer
-                                {
-                                    detailActivityBinding.progress.visibility = View.GONE
-                                    if (it !is NetworkDataException) {
-                                        Snackbar
-                                            .make(
-                                                detailActivityBinding.root,
-                                                getString(R.string.detail_activity_check_in_ok),
-                                                Snackbar.LENGTH_LONG
-                                            ).show()
-                                    } else {
-                                        Snackbar
-                                            .make(
-                                                detailActivityBinding.root,
-                                                getString(R.string.detail_activity_check_in_fail),
-                                                Snackbar.LENGTH_LONG
-                                            ).show()
-                                    }
-                                })
+                        executeCheckIn(dialogBiding)
 
                     }
                 })
@@ -128,18 +105,54 @@ class DetailActivity : AppCompatActivity() {
                 isCheckInShowing = false
                 shrinkFab()
             }
-            detailViewModel.invalidEmail.removeObservers(this)
-            detailViewModel.invalidEmail.observe(this, androidx.lifecycle.Observer {
-                dialogBiding.detailCheckInDialogEmailEdit.error = getString(R.string
-                    .detail_activity_required_field)
-            })
-
-            detailViewModel.invalidName.removeObservers(this)
-            detailViewModel.invalidName.observe(this, androidx.lifecycle.Observer {
-                dialogBiding.detailCheckInDialogNameEdit.error = getString(R.string
-                    .detail_activity_required_field)
-            })
+            observerDialogResult(dialogBiding)
         }
+    }
+
+    private fun observerDialogResult(dialogBiding: DetailCheckInDialogBinding) {
+        detailViewModel.invalidEmail.removeObservers(this)
+        detailViewModel.invalidEmail.observe(this, androidx.lifecycle.Observer {
+            dialogBiding.detailCheckInDialogEmailEdit.error = getString(
+                R.string
+                    .detail_activity_required_field
+            )
+        })
+
+        detailViewModel.invalidName.removeObservers(this)
+        detailViewModel.invalidName.observe(this, androidx.lifecycle.Observer {
+            dialogBiding.detailCheckInDialogNameEdit.error = getString(
+                R.string
+                    .detail_activity_required_field
+            )
+        })
+    }
+
+    private fun executeCheckIn(dialogBiding: DetailCheckInDialogBinding) {
+        detailViewModel.checkIn(
+            eventDTO.id,
+            dialogBiding.detailCheckInDialogNameEdit.text.toString(),
+            dialogBiding.detailCheckInDialogEmailEdit.text.toString()
+        )
+            .observe(
+                this, androidx.lifecycle.Observer
+                {
+                    detailActivityBinding.progress.visibility = View.GONE
+                    if (it !is NetworkDataException) {
+                        Snackbar
+                            .make(
+                                detailActivityBinding.root,
+                                getString(R.string.detail_activity_check_in_ok),
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                    } else {
+                        Snackbar
+                            .make(
+                                detailActivityBinding.root,
+                                getString(R.string.detail_activity_check_in_fail),
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                    }
+                })
     }
 
     private fun setupShare() {
