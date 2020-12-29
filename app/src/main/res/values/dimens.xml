@@ -24,5 +24,6 @@
     <dimen name="detail_activity_fab_margin_bottom">16dp</dimen>
     <dimen name="detail_activity_go_to_width">160dp</dimen>
     <dimen name="detail_activity_margin_bottom">24dp</dimen>
+    <dimen name="launcher_activity_label_size">30dp</dimen>
 
 </resources>
