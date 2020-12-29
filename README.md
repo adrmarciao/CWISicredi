@@ -2,7 +2,7 @@
 Aplicativo foi desenvolvido para exibição de dados de eventos disponíveis pela seguinte api:  
   - [GET Eventos](http://5f5a8f24d44d640016169133.mockapi.io/api/events)
   - [GET Evento](http://5f5a8f24d44d640016169133.mockapi.io/api/events/1)
-  - [POST Checkin](http://5f5a8f24d44d640016169133.mockapi.io/api/checkin)
+  - [POST Check-In](http://5f5a8f24d44d640016169133.mockapi.io/api/checkin)
 
 ## Estrutura de pastas
  O Aplicativo foi desenvolvido em dois modulos. O Modulo **principal** com Layout, ViewModel e 
