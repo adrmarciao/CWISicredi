@@ -30,18 +30,22 @@ Aplicativo foi desenvolvido para exibição de dados de eventos disponível pela
 
 ## Arquitetura
 
-<img src="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel#/media/File:MVVMPattern.png"  width="800" height="200">
+<img src="MVVMPattern.png"  width="800" height="200">
+
+A arquitetura usada no projeto foi **MVVM**, por ser recomendada pela própria Google. 
 
 ## Library
-    [AndroidX](httpswww.springbot.com)
-    [Retrofit](httpshibernate.org)
+- [AndroidX](https://developer.android.com/jetpack/androidx) utilizado, pelo fato dela ser a substituta da biblioteca Android Suport;
+- [Retrofit](httpshibernate.org) utilizado para facilitar o processo de requisição para API de eventos;
+- [Koin](https://insert-koin.io/) utilizado para injeção de dependencias no projeto;
+- [Glide](https://github.com/bumptech/glide) utilizado para fazer o gerenciamento de imagens no aplicativo;
+- [Coroutines](https://developer.android.com/kotlin/coroutines?gclid=CjwKCAiAxKv_BRBdEiwAyd40N5WzWA_QgAeB-w0UXJVedXgBJnYPaSCjT-gkvLOGghk2NeHszPQeghoClpEQAvD_BwE&gclsrc=aw.ds) usado para gerenciar e executar tarefas assíncronas;
+- [Mockito-Kotlin](https://github.com/nhaarman/mockito-kotlin) usado para a realização dos testes unitários, pois com essa lib podemos simular instancias e fazer a verificação de chamada de métodos
 
-## Instrução
-            
 ## Testes
-   
 
-## API REST
+Os testes foram feitos para validar algumas regras existentes no ViewModel e para execução dos testes basta clickar com botão direito em cima de "app" e clicar em "Run All Tests" ou pode ser executado pelo gradle.
+
 
     
    
