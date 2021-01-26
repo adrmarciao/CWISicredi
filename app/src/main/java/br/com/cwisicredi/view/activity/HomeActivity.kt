@@ -7,10 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cwisicredi.databinding.HomeActivityBinding
+import br.com.cwisicredi.module.coroutinesModule
 import br.com.cwisicredi.module.eventModule
+import br.com.cwisicredi.scope.NetworkScope
+import br.com.cwisicredi.scope.UiScope
 import br.com.cwisicredi.view.adapter.EventsAdapter
 import br.com.cwisicredi.viewmodel.HomeViewModel
 import br.com.network.dto.EventDTO
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelChildren
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
@@ -22,14 +27,21 @@ class HomeActivity : AppCompatActivity(), EventsAdapter.EventCallback {
 
     private val adapter: EventsAdapter by inject()
 
+    private val job: Job by inject()
+
     private val homeViewModel: HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = HomeActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadKoinModules(eventModule)
+        loadKoinModules(listOf(eventModule, coroutinesModule))
         setEventAdapter()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        job.cancel()
     }
 
     private fun setEventAdapter() {
@@ -52,7 +64,7 @@ class HomeActivity : AppCompatActivity(), EventsAdapter.EventCallback {
 
     override fun onDestroy() {
         super.onDestroy()
-        unloadKoinModules(eventModule)
+        unloadKoinModules(listOf(eventModule, coroutinesModule))
     }
 
     override fun onEventClicked(eventDTO: EventDTO) {

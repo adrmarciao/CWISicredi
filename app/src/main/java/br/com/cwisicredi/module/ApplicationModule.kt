@@ -12,9 +12,9 @@ import org.koin.dsl.module
 
 val eventModule = module {
     factory { EventsAdapter(get()) }
-    factory<EventRepository> { EventRepositoryImpl(get()) }
+    factory<EventRepository> { EventRepositoryImpl(get(),get()) }
     factory<CheckInRepository> { CheckInRepositoryImpl(get()) }
 
-    viewModel { HomeViewModel(get()) }
+    viewModel { HomeViewModel(get(), get()) }
     viewModel { DetailViewModel(get(), get()) }
 }
